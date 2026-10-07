@@ -15,7 +15,7 @@ export function Footer() {
                 <span>Trust Council</span>
               </span>
             </Link>
-            <p>A Legacy of World-Class Education since 1955 — educating Nigeria&rsquo;s next generation across eight campuses.</p>
+            <p>A Legacy of World-Class Education since 1955. Eight schools in Lagos and Ogun State, Nigeria.</p>
             <div className="foot-social">
               {SOCIAL_LINKS.map((s) => (
                 <a key={s.label} href={s.href} aria-label={s.label} target="_blank" rel="noopener noreferrer">

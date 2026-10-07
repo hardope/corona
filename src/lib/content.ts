@@ -2,6 +2,11 @@
 // /contact-us/, /admissions/, /careers/, /corona-ceo-message/, /corona-school-de-message/).
 // Kept in one place so every page cites the same facts.
 
+// Canonical origin for metadata, sitemap and structured data. Override per
+// deployment (e.g. a staging domain) with NEXT_PUBLIC_SITE_URL.
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://coronaschools.org";
+export const SITE_NAME = "Corona Schools' Trust Council";
+
 export const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/schools", label: "Our Schools" },
@@ -16,7 +21,7 @@ export const CENTRAL_OFFICE = {
   address: "No. 72 Raymond Njoku, Ikoyi, Lagos, Nigeria",
   phones: ["+234-903-111-0555", "+234-906-000-4651"],
   email: "info@coronaschools.org",
-  hours: "Weekdays, 8:00am – 4:00pm",
+  hours: "Monday to Friday, 8am to 4pm",
 };
 
 export const SOCIAL_LINKS = [
@@ -121,7 +126,7 @@ export const EXECUTIVE_MANAGEMENT = [
   { name: "Mrs. Adetokunbo Matilukuro", role: "Director of Education" },
   { name: "Mr. Adewale Soremi", role: "Financial Controller" },
   { name: "Ms. Ngozi Ebo", role: "Head, Corporate Services" },
-  { name: "Ms. Christie Yellowe", role: "HR Manager" },
+  { name: "Ms. Christie Yellowe", role: "Human Resource Manager" },
   { name: "Mrs. Kike Adewolu", role: "Infrastructure & Development Manager" },
 ];
 

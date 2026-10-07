@@ -6,14 +6,15 @@ import { CAREER_ROLES, CENTRAL_OFFICE } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Careers",
+  alternates: { canonical: "/careers" },
   description:
-    "Join Corona Schools' Trust Council — open teaching and support roles across eight campuses, in an environment built for excellence, growth and continuous development.",
+    "Teaching and non-teaching jobs at Corona Schools' Trust Council's eight schools in Lagos and Ogun State. See the roles we recruit for and how to apply.",
 };
 
 const STEPS = [
-  { title: "Tell us about you", body: "Share your personal details, experience level and the position you’re applying for." },
-  { title: "Upload your CV", body: "A CV is required; a cover letter is optional but always welcome." },
-  { title: "Hear back", body: "Our team reviews every application and responds within 1–2 business days." },
+  { title: "Fill in your details", body: "Your name, contact details, years of experience and the position you’re applying for." },
+  { title: "Upload your CV", body: "A CV is required. A cover letter is optional." },
+  { title: "Hear back from us", body: "Our team reviews every application and replies within two working days." },
 ];
 
 export default function CareersPage() {
@@ -31,17 +32,17 @@ export default function CareersPage() {
         </div>
         <div className="wrap">
           <span className="eyebrow on-dark">Careers</span>
-          <h1>Teach the students<br />who&rsquo;ll teach the future.</h1>
-          <p className="lede">We build an enabling environment of excellence, growth and continuous development for our staff — and our alumni&rsquo;s track record shows the results, across sectors, worldwide.</p>
+          <h1>Work at<br />Corona Schools</h1>
+          <p className="lede">We are always looking for experienced, talented teaching and non-teaching staff. We aim to give everyone who works here room to grow and keep developing.</p>
         </div>
       </section>
 
       <section>
         <div className="wrap">
           <Reveal as="div" className="section-head mt-0">
-            <span className="eyebrow">Open Categories</span>
-            <h2>Where you could join us.</h2>
-            <p className="lede">Current hiring spans these categories across our eight campuses. Don&rsquo;t see your exact role — reach out anyway.</p>
+            <span className="eyebrow">Roles</span>
+            <h2>Positions we recruit for</h2>
+            <p className="lede">We hire for these roles across our eight schools. If yours isn&rsquo;t listed, you can still apply.</p>
           </Reveal>
           <Reveal className="roles-panel mt-0">
             <div className="roles-list">
@@ -58,8 +59,8 @@ export default function CareersPage() {
       <section className="alt">
         <div className="wrap">
           <Reveal as="div" className="section-head mt-0">
-            <span className="eyebrow tone-indigo">How to Apply</span>
-            <h2>A simple, three-step process.</h2>
+            <span className="eyebrow tone-indigo">Applications</span>
+            <h2>How to apply</h2>
           </Reveal>
           <Reveal className="process-list mt-0" style={{ maxWidth: 760 }}>
             {STEPS.map((s, i) => (
@@ -80,12 +81,12 @@ export default function CareersPage() {
           <Reveal as="div" className="admissions-cta mt-0">
             <div className="admissions-inner" style={{ gridTemplateColumns: "1fr", textAlign: "center", justifyItems: "center" }}>
               <div>
-                <span className="eyebrow" style={{ color: "#FFD9D6" }}>Get In Touch</span>
-                <h2>Ready to apply?</h2>
+                <span className="eyebrow" style={{ color: "#FFD9D6" }}>Apply</span>
+                <h2>Send us your CV</h2>
                 <p className="lede" style={{ margin: "16px auto 0" }}>
                   Email your CV to{" "}
                   <a href={`mailto:${CENTRAL_OFFICE.email}`} style={{ color: "#fff", textDecoration: "underline" }}>{CENTRAL_OFFICE.email}</a>
-                  {" "}or call {CENTRAL_OFFICE.phones[0]} — we respond within 1–2 business days.
+                  {" "}or call {CENTRAL_OFFICE.phones[0]}.
                 </p>
               </div>
             </div>

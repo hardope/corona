@@ -6,8 +6,9 @@ import { CENTRAL_OFFICE, SCHOOLS, SOCIAL_LINKS } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Contact Us",
+  alternates: { canonical: "/contact" },
   description:
-    "Reach Corona Schools' Trust Council's central office or any of our eight campuses directly — addresses, phone numbers and email for every school.",
+    "Addresses, phone numbers and email addresses for Corona Schools' Trust Council's central office and all eight of our schools.",
 };
 
 export default function ContactPage() {
@@ -15,9 +16,9 @@ export default function ContactPage() {
     <>
       <section className="page-hero">
         <div className="wrap">
-          <span className="eyebrow">Contact Us</span>
-          <h1>Give your child<br />a world-class education.</h1>
-          <p className="lede">Reach our central office, or go straight to the campus you&rsquo;re interested in — every school has its own direct line.</p>
+          <span className="eyebrow">Get in Touch</span>
+          <h1>Contact us</h1>
+          <p className="lede">Contact our central office, or call or email any of our schools directly.</p>
         </div>
       </section>
 
@@ -29,7 +30,7 @@ export default function ContactPage() {
               <span className="contact-tag">Head Office</span>
               <ul>
                 <li><Icon name="pin" /><span>{CENTRAL_OFFICE.address}</span></li>
-                <li><Icon name="phone" /><a href={`tel:${CENTRAL_OFFICE.phones[0].replace(/[^+\d]/g, "")}`}>{CENTRAL_OFFICE.phones.join(" · ")}</a></li>
+                <li><Icon name="phone" /><a href={`tel:${CENTRAL_OFFICE.phones[0].replace(/[^+\d]/g, "")}`}>{CENTRAL_OFFICE.phones.join(", ")}</a></li>
                 <li><Icon name="mail" /><a href={`mailto:${CENTRAL_OFFICE.email}`}>{CENTRAL_OFFICE.email}</a></li>
                 <li><Icon name="clock" /><span>{CENTRAL_OFFICE.hours}</span></li>
               </ul>

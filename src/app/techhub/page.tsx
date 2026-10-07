@@ -6,8 +6,9 @@ import { Icon } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "TechHub",
+  alternates: { canonical: "/techhub" },
   description:
-    "Corona Schools' TechHub — a Microsoft Showcase School innovation centre for robotics and computing, staffed by Microsoft Innovative Educator Experts.",
+    "The Corona Schools TechHub at our Ibeju-Lekki campus, our robotics teams, and our Microsoft-certified teaching staff.",
 };
 
 export default function TechHubPage() {
@@ -24,9 +25,9 @@ export default function TechHubPage() {
           />
         </div>
         <div className="wrap">
-          <span className="eyebrow on-dark">TechHub</span>
-          <h1>Built for what&rsquo;s next.</h1>
-          <p className="lede">A Microsoft Showcase School innovation centre — where robotics, computing and a Microsoft-certified teaching staff meet everyday classroom life.</p>
+          <span className="eyebrow on-dark">Technology</span>
+          <h1>TechHub</h1>
+          <p className="lede">Our TechHub at the Ibeju-Lekki campus opened in 2026. Students use it for coding, robotics and digital learning.</p>
         </div>
       </section>
 
@@ -41,9 +42,9 @@ export default function TechHubPage() {
             />
           </div>
           <Reveal className="mt-0">
-            <span className="eyebrow tone-indigo">Innovation</span>
-            <h2>A Microsoft Showcase School.</h2>
-            <p className="lede">Corona Schools&rsquo; Trust Council is recognized as a Microsoft Showcase School — one of a select group worldwide — reflecting a sustained investment in technology-driven teaching, hands-on robotics, and a staff fluent in the tools students will use for the rest of their lives.</p>
+            <span className="eyebrow tone-indigo">Microsoft</span>
+            <h2>A Microsoft Showcase School</h2>
+            <p className="lede">Corona Schools&rsquo; Trust Council is a Microsoft Showcase School, part of a worldwide group of schools that Microsoft recognises for using technology well in teaching. Many of our teachers hold Microsoft certifications.</p>
             <div className="badge-row">
               <span className="pill"><strong>158</strong>&nbsp;Microsoft Innovative Educator Experts</span>
               <span className="pill"><strong>187</strong>&nbsp;Microsoft Certified Educators</span>
@@ -55,22 +56,22 @@ export default function TechHubPage() {
       <section className="alt">
         <div className="wrap">
           <Reveal as="div" className="section-head mt-0">
-            <span className="eyebrow">Recently</span>
-            <h2>TechHub, officially unveiled.</h2>
-            <p className="lede">Our newest innovation centre opened its doors following a strong showing at a recent robotics competition — the latest step in a technology programme that spans every campus.</p>
+            <span className="eyebrow">About the TechHub</span>
+            <h2>Built by our alumni</h2>
+            <p className="lede">The Alumni Association set up the TechHub as its legacy project for the Trust Council&rsquo;s 70th anniversary.</p>
           </Reveal>
           <Reveal className="value-list mt-0" style={{ maxWidth: 640 }}>
             <li>
               <span className="value-num">01</span>
-              <div><h4>Hands-on robotics</h4><p>Pupils design, build and program robots as part of the regular curriculum, not an after-school extra.</p></div>
+              <div><h4>Coding and robotics</h4><p>ICT, coding, robotics and STEAM are part of school life across our schools.</p></div>
             </li>
             <li>
               <span className="value-num">02</span>
-              <div><h4>Certified teaching staff</h4><p>158 Microsoft Innovative Educator Experts and 187 Microsoft Certified Educators across the Trust Council.</p></div>
+              <div><h4>Certified teachers</h4><p>158 Microsoft Innovative Educator Experts and 187 Microsoft Certified Educators across the Trust Council.</p></div>
             </li>
             <li>
               <span className="value-num">03</span>
-              <div><h4>Competition-tested</h4><p>Recent robotics competition success put Corona pupils&rsquo; skills up against the best.</p></div>
+              <div><h4>Robotics competitions</h4><p>Two Corona teams, Team Alpha and Team Beta, reached the 2026 Eurobot Junior finals.</p></div>
             </li>
           </Reveal>
         </div>
@@ -81,11 +82,11 @@ export default function TechHubPage() {
           <Reveal as="div" className="admissions-cta mt-0" style={{ background: "var(--feature-ink)" }}>
             <div className="admissions-inner" style={{ gridTemplateColumns: "1fr", textAlign: "center", justifyItems: "center" }}>
               <div>
-                <span className="eyebrow tone-feature">See It In Person</span>
-                <h2>Visit a Corona campus.</h2>
-                <p className="lede" style={{ margin: "16px auto 0" }}>Every school shares the same technology programme — find yours and get in touch.</p>
+                <span className="eyebrow tone-feature">Visit Us</span>
+                <h2>Find a school near you</h2>
+                <p className="lede" style={{ margin: "16px auto 0" }}>See all eight of our schools and contact them directly.</p>
                 <div className="admissions-ctas" style={{ justifyContent: "center" }}>
-                  <Link href="/schools" className="btn btn-white">Explore Our Schools <Icon name="arrow" /></Link>
+                  <Link href="/schools" className="btn btn-white">See Our Schools <Icon name="arrow" /></Link>
                   <Link href="/contact" className="btn btn-on-crimson">Contact Us</Link>
                 </div>
               </div>

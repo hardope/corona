@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { Icon } from "@/components/Icons";
+import { OrganizationJsonLd } from "@/components/OrganizationJsonLd";
 import { SCHOOLS } from "@/lib/content";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   const early = SCHOOLS.filter((s) => s.stage === "Nursery" || s.stage === "Primary");
@@ -11,6 +17,8 @@ export default function HomePage() {
 
   return (
     <>
+      <OrganizationJsonLd />
+
       {/* HERO */}
       <section className="hero">
         <div className="hero-media">
@@ -23,16 +31,16 @@ export default function HomePage() {
           />
         </div>
         <div className="wrap hero-inner">
-          <span className="eyebrow on-dark">Corona Schools&rsquo; Trust Council &middot; Est. 1955</span>
+          <span className="eyebrow on-dark">Corona Schools&rsquo; Trust Council, founded 1955</span>
           <h1>An Odyssey<br />of Influence</h1>
           <p className="lede">
-            Seven decades of shaping Nigeria&rsquo;s next generation — from Montessori nursery through
-            blended Nigerian, British and international curricula, to a college of education. Eight
-            campuses. One standard of excellence.
+            For over 70 years we have educated Nigerian children, from Montessori nursery through
+            primary and secondary school to our college of education. Today we run eight schools in
+            Lagos and Ogun State.
           </p>
           <div className="hero-ctas">
-            <Link href="/admissions" className="btn btn-primary">Begin Admissions <Icon name="arrow" /></Link>
-            <Link href="/schools" className="btn btn-ghost-light">Explore Our Schools</Link>
+            <Link href="/admissions" className="btn btn-primary">Apply for Admission <Icon name="arrow" /></Link>
+            <Link href="/schools" className="btn btn-ghost-light">See Our Schools</Link>
           </div>
         </div>
       </section>
@@ -40,10 +48,10 @@ export default function HomePage() {
       <div className="stats-panel">
         <div className="wrap">
           <Reveal className="stats-grid mt-0">
-            <div className="stat"><div className="stat-num">70</div><div className="stat-label">Years of educational leadership</div></div>
-            <div className="stat"><div className="stat-num">8</div><div className="stat-label">Schools under one Trust Council</div></div>
-            <div className="stat"><div className="stat-num">35K+</div><div className="stat-label">Alumni across the world</div></div>
-            <div className="stat"><div className="stat-num">600+</div><div className="stat-label">Educators and staff</div></div>
+            <div className="stat"><div className="stat-num">70</div><div className="stat-label">Years in education</div></div>
+            <div className="stat"><div className="stat-num">8</div><div className="stat-label">Schools in Lagos and Ogun State</div></div>
+            <div className="stat"><div className="stat-num">35,000+</div><div className="stat-label">Current and past students</div></div>
+            <div className="stat"><div className="stat-num">700+</div><div className="stat-label">Academic and non-academic staff</div></div>
           </Reveal>
         </div>
       </div>
@@ -63,30 +71,30 @@ export default function HomePage() {
             <figcaption>Pupils at Corona School, Lekki</figcaption>
           </Reveal>
           <Reveal>
-            <span className="eyebrow">Our Mission</span>
-            <h2>Educating for life,<br />not just for exams.</h2>
+            <span className="eyebrow">About Us</span>
+            <h2>Our mission</h2>
             <p className="mission-quote">
               &ldquo;To provide world-class education to children. We inculcate high moral and ethical
               values in our students as we prepare them for lifelong learning, service and
               fulfilment.&rdquo;
             </p>
             <p className="vision-text">
-              Our vision is to stand as Nigeria&rsquo;s leading educational institution — producing
-              well-rounded, proudly Nigerian young men and women equipped for continuous learning,
-              personal mastery and principled leadership.
+              Our vision is to be Nigeria&rsquo;s leading educational institution, producing
+              well-rounded and proudly Nigerian young men and women equipped for continuous learning,
+              personal mastery and leadership.
             </p>
             <ul className="value-list">
               <li>
                 <span className="value-num">01</span>
-                <div><h4>World-class academics</h4><p>Blended Nigerian, British and international curricula, benchmarked to Cambridge standards.</p></div>
+                <div><h4>Academics</h4><p>Nigerian, British and international curricula, including Cambridge IGCSE at secondary level.</p></div>
               </li>
               <li>
                 <span className="value-num">02</span>
-                <div><h4>Character formation</h4><p>High moral and ethical values instilled alongside academic rigor, in and out of the classroom.</p></div>
+                <div><h4>Values</h4><p>We teach high moral and ethical standards alongside academic work.</p></div>
               </li>
               <li>
                 <span className="value-num">03</span>
-                <div><h4>A global outlook</h4><p>An international community — 15% of our pupils join us from beyond Nigeria&rsquo;s borders.</p></div>
+                <div><h4>International outlook</h4><p>15% of our students come from outside Nigeria, and 37% go on to win scholarships to study abroad.</p></div>
               </li>
             </ul>
             <Link href="/about" className="btn btn-outline" style={{ marginTop: 30 }}>More about the Trust Council <Icon name="arrow" /></Link>
@@ -101,11 +109,10 @@ export default function HomePage() {
           <Reveal as="div" className="heritage-num mt-0">70</Reveal>
           <Reveal className="heritage-copy">
             <span className="eyebrow on-dark">Since 1955</span>
-            <h2>Seven decades of a legacy in motion.</h2>
+            <h2>70 years in Nigerian education</h2>
             <p className="lede">
-              What began in 1955 has grown into one of Nigeria&rsquo;s most trusted names in education —
-              eight schools, one tertiary college, and a community of over 35,000 alumni carrying the
-              same standard into the world.
+              Corona Schools&rsquo; Trust Council was founded in 1955. It now runs eight schools, from
+              crèche to a college of education, and more than 35,000 students have studied with us.
             </p>
             <p className="heritage-tagline">&ldquo;A Legacy of World-Class Education&rdquo;</p>
           </Reveal>
@@ -116,34 +123,34 @@ export default function HomePage() {
       <section id="curriculum">
         <div className="wrap">
           <Reveal as="div" className="section-head mt-0">
-            <span className="eyebrow">The Corona Pathway</span>
-            <h2>One continuous journey, four stages.</h2>
-            <p className="lede">Every pupil moves through a single, deliberately connected pathway — each stage built to prepare them for the next.</p>
+            <span className="eyebrow">Curriculum</span>
+            <h2>What we teach at each stage</h2>
+            <p className="lede">A child can join a Corona nursery and stay with us to the end of secondary school.</p>
           </Reveal>
           <Reveal className="pathway mt-0">
             <div className="path-step">
               <span className="step-no">01</span>
               <h3>Nursery</h3>
               <span className="step-tag">The Montessori Method</span>
-              <p>Foundational years built on independence, sensory learning and guided discovery.</p>
+              <p>We use the Montessori method to support children&rsquo;s learning in every curriculum area.</p>
             </div>
             <div className="path-step">
               <span className="step-no">02</span>
               <h3>Primary</h3>
               <span className="step-tag">Nigerian &amp; International Curricula</span>
-              <p>The Nigerian curriculum blended with the International Primary Curriculum, used in 80+ countries.</p>
+              <p>The Nigerian curriculum combined with the International Primary Curriculum (IPC).</p>
             </div>
             <div className="path-step">
               <span className="step-no">03</span>
               <h3>Secondary</h3>
               <span className="step-tag">Nigerian &amp; British Curricula</span>
-              <p>JSSCE and WASSCE alongside Cambridge International and IGCSE, plus ACCA Foundation-level study.</p>
+              <p>JSSCE and WASSCE alongside Cambridge IGCSE. Students can also take the ACCA Foundation level.</p>
             </div>
             <div className="path-step">
               <span className="step-no">04</span>
               <h3>Tertiary</h3>
               <span className="step-tag">College of Education, Apapa</span>
-              <p>Training the next generation of Nigerian educators to carry the standard forward.</p>
+              <p>Courses for aspiring teachers, education consultants and school owners.</p>
             </div>
           </Reveal>
         </div>
@@ -160,8 +167,8 @@ export default function HomePage() {
               sizes="100vw"
             />
             <div className="schools-banner-copy">
-              <span className="eyebrow on-dark">Eight Campuses</span>
-              <h2 style={{ color: "#fff", marginTop: ".4em" }}>Wherever you find Corona,<br />you find the same standard.</h2>
+              <span className="eyebrow on-dark">Our Schools</span>
+              <h2 style={{ color: "#fff", marginTop: ".4em" }}>Eight schools in<br />Lagos and Ogun State</h2>
             </div>
           </Reveal>
 
@@ -208,9 +215,9 @@ export default function HomePage() {
               />
             </div>
             <div>
-              <span className="eyebrow tone-indigo">Innovation</span>
-              <h2>A Microsoft Showcase School, built for what&rsquo;s next.</h2>
-              <p className="lede">Our TechHub gives pupils hands-on access to robotics and computing — building on recent competition success and a teaching staff fluent in the tools of tomorrow.</p>
+              <span className="eyebrow tone-indigo">Technology</span>
+              <h2>A Microsoft Showcase School</h2>
+              <p className="lede">Our new TechHub at the Ibeju-Lekki campus gives students space for coding, robotics and digital learning. The Alumni Association set it up as its 70th anniversary legacy project.</p>
               <div className="badge-row">
                 <span className="pill"><strong>158</strong>&nbsp;Microsoft Innovative Educator Experts</span>
                 <span className="pill"><strong>187</strong>&nbsp;Microsoft Certified Educators</span>
@@ -226,7 +233,7 @@ export default function HomePage() {
         <div className="wrap">
           <Reveal as="div" className="section-head mt-0">
             <span className="eyebrow">Distinctions</span>
-            <h2>Recognized where it matters most.</h2>
+            <h2>Awards and accreditation</h2>
           </Reveal>
         </div>
         <Reveal as="div" className="distinctions mt-0">
@@ -241,10 +248,10 @@ export default function HomePage() {
           <div className="distinctions-panel">
             <div className="wrap" style={{ padding: 0 }}>
               <ul className="distinctions-list">
-                <li><Icon name="check" className="dist-mark" /><div><b>NEASC Accreditation</b>Held since 2017 — the only African secondary school to hold this distinction, Corona Secondary School, Agbara.</div></li>
-                <li><Icon name="check" className="dist-mark" /><div><b>ACCA Foundation-Level Study</b>The only Nigerian secondary school offering this qualification pathway.</div></li>
-                <li><Icon name="check" className="dist-mark" /><div><b>British Council Award, 2019</b>Recognized for outstanding community initiative.</div></li>
-                <li><Icon name="check" className="dist-mark" /><div><b>Microsoft Showcase School</b>One of a select group of schools worldwide.</div></li>
+                <li><Icon name="check" className="dist-mark" /><div><b>NEASC accreditation</b>Since 2017, Corona Secondary School, Agbara has been the only secondary school in Africa accredited by NEASC.</div></li>
+                <li><Icon name="check" className="dist-mark" /><div><b>ACCA Foundation level</b>Our students are the only secondary school students in Nigeria to have passed the ACCA Foundation level.</div></li>
+                <li><Icon name="check" className="dist-mark" /><div><b>British Council award, 2019</b>The Community Initiative Award, for a student-led project to provide a water borehole.</div></li>
+                <li><Icon name="check" className="dist-mark" /><div><b>Microsoft Showcase School</b>Recognised by Microsoft for the way we use technology in teaching.</div></li>
               </ul>
             </div>
           </div>
@@ -255,27 +262,27 @@ export default function HomePage() {
       <section>
         <div className="wrap">
           <Reveal as="div" className="section-head mt-0">
-            <span className="eyebrow">Beyond the Classroom</span>
-            <h2>A full life, not just a full timetable.</h2>
+            <span className="eyebrow">Co-curricular</span>
+            <h2>Sports, arts and clubs</h2>
           </Reveal>
           <Reveal className="life-grid mt-0">
             <div className="life-card">
               <Image src="/images/cocurr-martial-arts.jpg" alt="Young Corona Schools pupils in taekwondo uniforms practising a martial arts stance" fill sizes="(min-width: 700px) 33vw, 100vw" />
-              <span>Martial Arts</span>
+              <span>Taekwondo</span>
             </div>
             <div className="life-card">
               <Image src="/images/cocurr-ballet.jpg" alt="Young Corona Schools pupils in white tutus performing a ballet routine on stage" fill sizes="(min-width: 700px) 33vw, 100vw" />
-              <span>Performing Arts</span>
+              <span>Ballet</span>
             </div>
             <div className="life-card">
               <Image src="/images/cocurr-basketball.jpg" alt="A Corona Schools pupil taking a shot during a basketball session on an outdoor court" fill sizes="(min-width: 700px) 33vw, 100vw" />
-              <span>Athletics</span>
+              <span>Basketball</span>
             </div>
           </Reveal>
           <Reveal as="p" className="life-note mt-0">
-            Music, golf, cheerleading, martial arts, Model United Nations, STEAM and multiple languages
-            sit alongside a full sporting calendar — including four Tag-Rugby championship titles for
-            Corona School, Gbagada.
+            Other activities include music, golf, chess, drama, cheerleading, debating, Model United
+            Nations, STEAM, animation, and languages including French, German, Hausa, Igbo and Yoruba.
+            Corona School, Gbagada has won the Lagos State Tag-Rugby trophy four times.
           </Reveal>
         </div>
       </section>
@@ -284,7 +291,7 @@ export default function HomePage() {
       <section className="alt">
         <div className="wrap">
           <Reveal as="div" className="section-head mt-0" style={{ marginBottom: 36 }}>
-            <span className="eyebrow">Recognized &amp; Accredited By</span>
+            <span className="eyebrow">Partners and Accreditation</span>
           </Reveal>
           <Reveal className="logo-strip mt-0">
             {/* eslint-disable @next/next/no-img-element */}
@@ -297,7 +304,8 @@ export default function HomePage() {
             {/* eslint-enable @next/next/no-img-element */}
           </Reveal>
           <div className="media-row">
-            <span>CNN</span><span>BusinessDay</span><span>Nigeria Tribune</span><span>ThisDay</span><span>Vanguard</span>
+            <p className="media-label">We have been featured in</p>
+            <span>CNN</span><span>ThisDay</span><span>Vanguard</span><span>The Sun</span><span>Nigerian Tribune</span><span>Legit.ng</span><span>PM News</span>
           </div>
         </div>
       </section>
@@ -306,8 +314,8 @@ export default function HomePage() {
       <section id="news">
         <div className="wrap">
           <Reveal as="div" className="section-head mt-0">
-            <span className="eyebrow">Latest News</span>
-            <h2>From across the Trust Council.</h2>
+            <span className="eyebrow">News</span>
+            <h2>Latest from our schools</h2>
           </Reveal>
           <Reveal className="news-grid mt-0">
             <article className="news-card">
@@ -316,24 +324,24 @@ export default function HomePage() {
               </div>
               <div className="news-body">
                 <span className="news-tag">Graduation</span>
-                <h3>Class of 2026 graduates</h3>
-                <p>Our newest cohort of graduands step out into the world, ready to carry the Corona standard forward.</p>
+                <h3>CSS Agbara Class of 2026 graduates</h3>
+                <p>The class graduated under the theme &ldquo;Shaped by Diversity, Defined by Distinction&rdquo;, with family, staff and friends in attendance.</p>
               </div>
             </article>
             <article className="news-card tone-indigo">
               <div className="news-media"><span className="mark"><Icon name="flame" /></span></div>
               <div className="news-body">
-                <span className="news-tag" style={{ color: "var(--indigo)" }}>Innovation</span>
-                <h3>TechHub officially unveiled</h3>
-                <p>Our new innovation centre opens its doors, following a strong showing at a recent robotics competition.</p>
+                <span className="news-tag" style={{ color: "var(--indigo)" }}>Technology</span>
+                <h3>TechHub opens at Ibeju-Lekki</h3>
+                <p>The new TechHub is the Alumni Association&rsquo;s legacy project for our 70th anniversary.</p>
               </div>
             </article>
             <article className="news-card tone-crimson">
               <div className="news-media"><span className="mark"><Icon name="flame" /></span></div>
               <div className="news-body">
                 <span className="news-tag">Community</span>
-                <h3>Partnering for children&rsquo;s hearts</h3>
-                <p>A new charitable partnership is helping fund life-saving heart surgeries for children in need.</p>
+                <h3>Raising funds for children&rsquo;s heart surgery</h3>
+                <p>With the charity From My Heart For Your Heart, we raised ₦11,374,645 for open-heart surgery for children with congenital heart disease.</p>
               </div>
             </article>
           </Reveal>
@@ -346,19 +354,19 @@ export default function HomePage() {
           <Reveal as="div" className="admissions-cta mt-0">
             <div className="admissions-inner">
               <div>
-                <span className="eyebrow" style={{ color: "#FFD9D6" }}>Admissions Open &middot; 2025/2026</span>
-                <h2>Your child&rsquo;s odyssey<br />starts here.</h2>
-                <p className="lede">Entrance is open for Years 7–11, including scholarship entrance examinations. Choose your school and apply online, with day and boarding options available.</p>
+                <span className="eyebrow" style={{ color: "#FFD9D6" }}>2026/2027 Admissions</span>
+                <h2>Generations have thrived here.<br />It&rsquo;s your child&rsquo;s turn.</h2>
+                <p className="lede">Registration for the entrance examination into Years 7 to 11 is open, for day and boarding places. We also admit children into other classes throughout the year.</p>
                 <div className="admissions-ctas">
-                  <Link href="/admissions" className="btn btn-white">Start Your Application <Icon name="arrow" /></Link>
-                  <Link href="/contact" className="btn btn-on-crimson">Talk to Admissions</Link>
+                  <Link href="/admissions" className="btn btn-white">Apply Now <Icon name="arrow" /></Link>
+                  <Link href="/contact" className="btn btn-on-crimson">Contact Admissions</Link>
                 </div>
               </div>
               <ul className="admissions-facts">
-                <li><Icon name="check" /> Scholarship entrance examinations available</li>
-                <li><Icon name="check" /> Day and boarding options across campuses</li>
-                <li><Icon name="check" /> Blended Nigerian, British &amp; international curricula</li>
-                <li><Icon name="check" /> NEASC-accredited secondary education</li>
+                <li><Icon name="check" /> Entrance exam registration open for Years 7 to 11</li>
+                <li><Icon name="check" /> Weekly and full boarding at secondary level</li>
+                <li><Icon name="check" /> Nigerian, British and international curricula</li>
+                <li><Icon name="check" /> NEASC-accredited secondary school at Agbara</li>
               </ul>
             </div>
           </Reveal>

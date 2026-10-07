@@ -8,17 +8,18 @@ import { SCHOOLS } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Our Schools",
+  alternates: { canonical: "/schools" },
   description:
-    "Eight Corona Schools campuses across Lagos and Ogun State — crèche through college of education, with contact details for every school.",
+    "Corona Schools' eight schools in Lagos and Ogun State, from crèche and nursery to secondary school and a college of education, with contact details for each.",
 };
 
 const STAGES = [
-  { tag: "Crèche", campuses: "Gbagada · Ikoyi · Lekki · Victoria Island", body: "From the cradle, your children are expertly nurtured by our seasoned early years’ educators." },
-  { tag: "Playschool", campuses: "Gbagada · Ikoyi · Lekki · Victoria Island", body: "Children learn basic life skills through age-appropriate, constructive play activities in a nurturing environment." },
-  { tag: "Nursery", campuses: "Gbagada · Ikoyi · Lekki · Victoria Island", body: "Co-curricular skills are fostered right from Corona’s pre-schools, within a spacious and serene environment." },
-  { tag: "Primary", campuses: "Gbagada · Ikoyi · Lekki · Victoria Island", body: "Confidence, collaboration, creativity, academic excellence and personal development, built during the formative years." },
-  { tag: "Secondary", campuses: "Lekki (day / weekly boarding) · Agbara (full boarding)", body: "The springboard for your child to launch into a future where limitless possibilities abound." },
-  { tag: "College of Education", campuses: "Apapa", body: "After three generations of student success, training the next generation of educators, education consultants and school administrators." },
+  { tag: "Crèche", campuses: "Gbagada, Ikoyi, Lekki and Victoria Island", body: "Our experienced early years staff look after the youngest children." },
+  { tag: "Playschool", campuses: "Gbagada, Ikoyi, Lekki and Victoria Island", body: "Children learn basic life skills through play, in a setting designed for their age." },
+  { tag: "Nursery", campuses: "Gbagada, Ikoyi, Lekki and Victoria Island", body: "We use the Montessori method, and children start co-curricular activities from nursery." },
+  { tag: "Primary", campuses: "Gbagada, Ikoyi, Lekki and Victoria Island", body: "The Nigerian curriculum combined with the International Primary Curriculum (IPC)." },
+  { tag: "Secondary", campuses: "Ibeju-Lekki (day and weekly boarding), Agbara (full boarding)", body: "Nigerian and British curricula that prepare students for universities around the world." },
+  { tag: "College of Education", campuses: "Apapa", body: "Courses for aspiring teachers, education consultants and school owners." },
 ];
 
 export default function SchoolsPage() {
@@ -42,16 +43,16 @@ export default function SchoolsPage() {
         </div>
         <div className="wrap">
           <span className="eyebrow on-dark">Our Schools</span>
-          <h1>Eight campuses,<br />one standard.</h1>
-          <p className="lede">Shaping confident, future-ready students across our trusted network of schools — from crèche to college of education, in Lagos and Ogun State.</p>
+          <h1>Our schools</h1>
+          <p className="lede">Eight schools in Lagos and Ogun State, from crèche to college of education.</p>
         </div>
       </section>
 
       <section>
         <div className="wrap">
           <Reveal as="div" className="section-head mt-0">
-            <span className="eyebrow">The Corona Pathway</span>
-            <h2>Six stages, one continuous journey.</h2>
+            <span className="eyebrow">Stages</span>
+            <h2>From crèche to college</h2>
           </Reveal>
           <Reveal className="stage-grid mt-0">
             {STAGES.map((s) => (
@@ -69,9 +70,9 @@ export default function SchoolsPage() {
       <section className="alt">
         <div className="wrap">
           <Reveal as="div" className="section-head mt-0">
-            <span className="eyebrow">Full Directory</span>
-            <h2>Find your campus.</h2>
-            <p className="lede">Every Corona campus, with direct contact details for admissions and general enquiries.</p>
+            <span className="eyebrow">Directory</span>
+            <h2>Find a school</h2>
+            <p className="lede">Addresses, phone numbers and email addresses for each school.</p>
           </Reveal>
 
           {groups.map((group) => (
@@ -95,10 +96,10 @@ export default function SchoolsPage() {
             <div className="admissions-inner" style={{ gridTemplateColumns: "1fr", textAlign: "center", justifyItems: "center" }}>
               <div>
                 <span className="eyebrow" style={{ color: "#FFD9D6" }}>Admissions</span>
-                <h2>Found your school?</h2>
-                <p className="lede" style={{ margin: "16px auto 0" }}>Entrance is open for Years 7–11, including scholarship entrance examinations.</p>
+                <h2>Apply for a place</h2>
+                <p className="lede" style={{ margin: "16px auto 0" }}>Registration for the 2026/2027 entrance examination into Years 7 to 11 is open.</p>
                 <div className="admissions-ctas" style={{ justifyContent: "center" }}>
-                  <Link href="/admissions" className="btn btn-white">Start Your Application <Icon name="arrow" /></Link>
+                  <Link href="/admissions" className="btn btn-white">Apply Now <Icon name="arrow" /></Link>
                 </div>
               </div>
             </div>

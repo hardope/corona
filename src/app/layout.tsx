@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { IconSprite } from "@/components/Icons";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SITE_NAME, SITE_URL } from "@/lib/content";
 
 const fraunces = localFont({
   src: [
@@ -25,13 +26,33 @@ const publicSans = localFont({
   display: "swap",
 });
 
+// Pages set their own title, description and canonical. openGraph/twitter
+// deliberately omit title/description so Next fills them from each page's.
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    template: "%s — Corona Schools' Trust Council",
-    default: "Corona Schools' Trust Council",
+    template: `%s | ${SITE_NAME}`,
+    default: `${SITE_NAME} | Private Schools in Lagos, Nigeria`,
   },
   description:
-    "An Odyssey of Influence — seven decades of world-class education across eight campuses in Lagos and Ogun State, Nigeria.",
+    "Corona Schools' Trust Council runs nursery, primary and secondary schools and a college of education in Lagos and Ogun State, Nigeria. Founded in 1955.",
+  applicationName: SITE_NAME,
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "en_NG",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@corona_schools",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FBF9F5" },
+    { media: "(prefers-color-scheme: dark)", color: "#17110D" },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

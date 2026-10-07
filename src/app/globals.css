@@ -1,5 +1,5 @@
 /* ===========================================================
-   Corona Schools' Trust Council — design tokens & site styles
+   Corona Schools' Trust Council: design tokens & site styles
    =========================================================== */
 
 :root{
@@ -26,7 +26,7 @@
   --gold-soft:#F4E9CE;
 
   /* Fixed (non-theme-switching) palette for the always-dark editorial
-     bands (.heritage / .distinctions-panel / .contact-hero-card) — these
+     bands (.heritage / .distinctions-panel / .contact-hero-card). These
      read as deliberately dark feature moments in both site themes, like
      the photographic hero, so they must not flip with --ink. */
   --feature-ink:#1C1512;
@@ -489,6 +489,10 @@ section{padding-block:clamp(64px,9vw,128px);}
 .media-row span{
   font-family:var(--font-display);font-weight:600;font-style:italic;font-size:1.3rem;color:var(--ink-faint);
 }
+.media-label{
+  flex-basis:100%;text-align:center;margin-bottom:-12px;
+  font-weight:700;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);
+}
 
 /* ---------- News ---------- */
 .news-grid{display:grid;gap:24px;}
@@ -587,6 +591,9 @@ footer{padding-block:clamp(56px,7vw,88px) 28px;background:var(--surface-alt);bor
 /* ---------- Reveal ---------- */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
 .reveal.is-visible{opacity:1;transform:none;}
+/* Reveal skips its observer for reduced-motion users, but hydration keeps the
+   server's class (no .is-visible), so show the content from CSS instead. */
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;}}
 
 /* ---------- utility ---------- */
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}

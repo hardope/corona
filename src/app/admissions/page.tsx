@@ -7,14 +7,15 @@ import { CENTRAL_OFFICE } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Admissions",
+  alternates: { canonical: "/admissions" },
   description:
-    "Admissions is open for 2025/2026 at Corona Schools' Trust Council — scholarship entrance examinations, online applications via SafApply, day and boarding options.",
+    "Apply to Corona Schools for 2026/2027. Entrance examination registration for Years 7 to 11 is open for day and boarding places, and you can apply online through SafApply.",
 };
 
 const STEPS = [
-  { title: "Choose your school", body: "Review our eight campuses and pick the one that fits your child’s stage and location — from crèche through to secondary." },
-  { title: "Sit the entrance assessment", body: "Scholarship entrance examinations are available across our schools for qualifying candidates." },
-  { title: "Apply online", body: "Submit your application through the SafApply portal, or reach our admissions team directly for guidance." },
+  { title: "Choose a school", body: "Look through our schools, from crèche to secondary, and pick the one that suits your child’s age and where you live." },
+  { title: "Register for the entrance exam", body: "Children joining secondary school (Years 7 to 11) sit an entrance examination. Registration for 2026/2027 is open." },
+  { title: "Apply online", body: "Send your application through the SafApply portal, or contact our admissions team for help." },
 ];
 
 export default function AdmissionsPage() {
@@ -31,12 +32,12 @@ export default function AdmissionsPage() {
           />
         </div>
         <div className="wrap">
-          <span className="eyebrow on-dark">Admissions &middot; 2025/2026</span>
-          <h1>Quality, well-rounded<br />education.</h1>
-          <p className="lede">Trusted by generations of parents for over 70 years — extending beyond exam results into music, sport, drama and every other area where a child grows.</p>
+          <span className="eyebrow on-dark">2026/2027 Admissions</span>
+          <h1>Quality, well-rounded<br />education</h1>
+          <p className="lede">Parents have trusted Corona Schools for over 70 years. Alongside their academic work, our students take part in music, sport, drama and many other activities.</p>
           <div className="hero-ctas">
             <Link href="/schools" className="btn btn-primary">Choose Your School <Icon name="arrow" /></Link>
-            <Link href="/contact" className="btn btn-ghost-light">Talk to Admissions</Link>
+            <Link href="/contact" className="btn btn-ghost-light">Contact Admissions</Link>
           </div>
         </div>
       </section>
@@ -45,7 +46,7 @@ export default function AdmissionsPage() {
         <div className="wrap">
           <Reveal as="div" className="section-head mt-0">
             <span className="eyebrow">How It Works</span>
-            <h2>Three steps to apply.</h2>
+            <h2>How to apply</h2>
           </Reveal>
           <Reveal className="process-list mt-0" style={{ maxWidth: 760 }}>
             {STEPS.map((s, i) => (
@@ -64,32 +65,32 @@ export default function AdmissionsPage() {
       <section className="alt">
         <div className="wrap about-grid">
           <Reveal className="mt-0">
-            <span className="eyebrow tone-indigo">What&rsquo;s Included</span>
-            <h2>Built for the whole child.</h2>
+            <span className="eyebrow tone-indigo">Why Corona Schools</span>
+            <h2>What we offer</h2>
             <ul className="value-list">
               <li>
                 <span className="value-num">01</span>
-                <div><h4>World-class facilities</h4><p>Purpose-built classrooms, laboratories and sporting facilities across every campus.</p></div>
+                <div><h4>Facilities</h4><p>Laboratories, digital classrooms, creative studios and sports facilities.</p></div>
               </li>
               <li>
                 <span className="value-num">02</span>
-                <div><h4>Certified teachers</h4><p>Including Microsoft Innovative Educator Experts and Microsoft Certified Educators.</p></div>
+                <div><h4>Experienced teachers</h4><p>Our staff include 158 Microsoft Innovative Educator Experts and 187 Microsoft Certified Educators.</p></div>
               </li>
               <li>
                 <span className="value-num">03</span>
-                <div><h4>Blended curricula</h4><p>Nigerian, British and international curricula, benchmarked to Cambridge standards at secondary level.</p></div>
+                <div><h4>Curriculum</h4><p>Nigerian, British and international curricula, with Cambridge IGCSE at secondary level.</p></div>
               </li>
               <li>
                 <span className="value-num">04</span>
-                <div><h4>Day &amp; boarding options</h4><p>Including full boarding at Corona Secondary School, Agbara.</p></div>
+                <div><h4>Day and boarding</h4><p>Secondary students can board weekly at Ibeju-Lekki or full-time at Agbara.</p></div>
               </li>
             </ul>
           </Reveal>
           <Reveal as="div" className="mt-0">
-            <div className="admissions-facts" style={{ background: "var(--surface)", border: "1px solid var(--line)", borderRadius: "var(--radius)", padding: 32 }}>
+            <div style={{ background: "var(--surface)", border: "1px solid var(--line)", borderRadius: "var(--radius)", padding: 32 }}>
               <p className="eyebrow" style={{ marginBottom: 8 }}>Need help applying?</p>
               <p style={{ color: "var(--ink-soft)", fontSize: ".95rem", lineHeight: 1.6, marginBottom: 20 }}>
-                Our admissions team responds within 1–2 business days.
+                Our admissions team replies within two working days.
               </p>
               <ul className="foot-contact" style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                 <li><Icon name="phone" /><a href={`tel:${CENTRAL_OFFICE.phones[0].replace(/[^+\d]/g, "")}`}>{CENTRAL_OFFICE.phones[0]}</a></li>
@@ -107,18 +108,18 @@ export default function AdmissionsPage() {
           <Reveal as="div" className="admissions-cta mt-0">
             <div className="admissions-inner">
               <div>
-                <span className="eyebrow" style={{ color: "#FFD9D6" }}>Admissions Open</span>
-                <h2>Your child&rsquo;s odyssey<br />starts here.</h2>
-                <p className="lede">Entrance is now open for Years 7–11, including scholarship entrance examinations, with day and boarding options available.</p>
+                <span className="eyebrow" style={{ color: "#FFD9D6" }}>Admissions</span>
+                <h2>Questions about applying?</h2>
+                <p className="lede">Call or email our admissions team and we will help you choose a school and apply.</p>
                 <div className="admissions-ctas">
                   <Link href="/contact" className="btn btn-white">Contact Admissions <Icon name="arrow" /></Link>
                 </div>
               </div>
               <ul className="admissions-facts">
-                <li><Icon name="check" /> Scholarship entrance examinations available</li>
-                <li><Icon name="check" /> Online application via the SafApply portal</li>
-                <li><Icon name="check" /> Day and boarding options across campuses</li>
-                <li><Icon name="check" /> Response within 1–2 business days</li>
+                <li><Icon name="check" /> Entrance exam registration open for Years 7 to 11</li>
+                <li><Icon name="check" /> Apply online through the SafApply portal</li>
+                <li><Icon name="check" /> Weekly and full boarding at secondary level</li>
+                <li><Icon name="check" /> We reply within two working days</li>
               </ul>
             </div>
           </Reveal>
